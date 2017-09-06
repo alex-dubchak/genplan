@@ -2,8 +2,11 @@
 <html>
   <head>
     <style>
+		html, body{
+			height: 95%;
+		}
        #map {
-        height: 400px;
+        height: 100%;
         width: 100%;
        }
     </style>
@@ -16,22 +19,42 @@
 
 		function initMap() {
 			var map = new google.maps.Map(document.getElementById('map'), {
-				zoom: 13,
-				center: {lat: 40.740, lng: -74.18}
+				zoom: 15,
+				center: {lat: 48.271527, lng: 25.959925}
 			});
 
 			var imageBounds = {
-				north: 40.773941,
-				south: 40.712216,
-				east: -74.12544,
-				west: -74.22655
+				north: 48.20,
+				south: 48.30,
+				east: 25.9,
+				west: 26.0
 			};
 
 			historicalOverlay = new google.maps.GroundOverlay(
-				'https://www.lib.utexas.edu/maps/historical/newark_nj_1922.jpg',
+				'https://alex-dubchak.github.io/genplan/gen-plan-big.jpg',
 				imageBounds);
-			historicalOverlay.setOpacity(0.3);
+			historicalOverlay.setOpacity(1);
 			historicalOverlay.setMap(map);
+
+
+			// Define the LatLng coordinates for the polygon's path.
+        var cheCoords = [
+          {lat: 48.20, lng: 25.9},
+          {lat: 48.30, lng: 25.9},
+          {lat: 48.30, lng: 26.0},
+          {lat:  48.20, lng: 26.0}
+        ];
+
+        // Construct the polygon.
+        var bermudaTriangle = new google.maps.Polygon({
+          paths: cheCoords,
+          strokeColor: '#FF0000',
+          strokeOpacity: 1,
+          strokeWeight: 2,
+          fillColor: '#FF0000',
+          fillOpacity: 0
+        });
+        bermudaTriangle.setMap(map);
 		
 		}
     </script>
