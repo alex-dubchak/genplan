@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
+	  <title>Накладка офіційного генерального плану міста Чернівці на інтерактивні карти GoogleMaps</title>
+		<meta name="description" content="Накладка офіційного генерального плану міста Чернівці на інтерактивні карти GoogleMaps">
+		<meta name="keywords" content="генеральний план,Інтерактивний,план,чернівці,план міста">
+		<meta name="author" content="Alex Dubchak">
     <style>
 		html, body{
-			height: 95%;
+			height: 90%;
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		}
+		h1{
+			line-height: 12px;
 		}
        #map {
         height: 100%;
@@ -16,7 +24,7 @@
     </style>
   </head>
   <body>
-    <h3>My Google Maps Demo</h3> 
+    <h1>Інтерактивний генеральний план забудови міста Чернівці</h1> 
 	<input type="checkbox" checked="checked" id="showOverlay" >
 	<label for="showOverlay" > Turn Plan On/Off </label>
 	&nbsp;&nbsp;&nbsp;
@@ -85,5 +93,6 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkMzeAX9A7XxOkJZFBfRP4qROcoiTzBLc&callback=initMap">
     </script>
+	<em>Цей індивідуальний проект розроблено на добровільних засадах. Користуйстесь на здоровя :). Офіційну карту генерального плану міста Чернівці взято <a target="_blank" href="http://fab.cv.ua/city-building/plan" >тут</a> </em>
   </body>
 </html>
